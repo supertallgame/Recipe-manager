@@ -13,6 +13,7 @@ public final class RecipeManagerPlugin extends JavaPlugin {
         saveDefaultConfig();
         checkVersion();
         service = new RecipeService(this);
+        getServer().getPluginManager().registerEvents(new RecipeListener(service), this);
 
         PluginCommand cmd = getCommand("recipes");
         if (cmd != null) {
