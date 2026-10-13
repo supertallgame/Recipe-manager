@@ -1,0 +1,51 @@
+# RecipeManager - apply changes with /recipes reload
+#
+# Recipe IDs look like  minecraft:netherite_chestplate_smithing
+# NOTE: netherite armor/tools are SMITHING recipes (<item>_smithing), not crafting-table recipes.
+# Use /recipes list to see what is currently disabled/custom.
+
+# Disable recipes by ID. '*' wildcards are allowed.
+disabled: []
+#  - minecraft:netherite_helmet_smithing
+#  - "minecraft:netherite_*_smithing"      # all netherite armor + tools
+
+# Disable EVERY recipe that produces one of these items.
+disabled-results: []
+#  - NETHERITE_CHESTPLATE
+
+# Show newly added custom recipes in players' recipe book.
+discover-custom-recipes: true
+
+# Add or replace recipes. If the key matches an existing recipe (e.g. a vanilla ID) it is replaced.
+# A key without a namespace becomes  recipemanager:<key>.
+# Ingredients: a material, a list of materials, or an item tag like "#minecraft:planks".
+# Types: shaped, shapeless, smelting, blasting, smoking, campfire, stonecutting, smithing
+#
+# recipes:
+#   minecraft:netherite_chestplate_smithing:     # replaces the vanilla upgrade recipe
+#     type: smithing
+#     result: NETHERITE_CHESTPLATE
+#     template: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+#     base: DIAMOND_CHESTPLATE
+#     addition: NETHERITE_BLOCK
+#   heavy_pickaxe:                                # brand new recipe
+#     type: shaped
+#     result: NETHERITE_PICKAXE
+#     amount: 1
+#     shape: ["NNN", " S ", " S "]
+#     ingredients:
+#       N: NETHERITE_INGOT
+#       S: STICK
+#   emerald_from_coal:
+#     type: shapeless
+#     result: EMERALD
+#     ingredients: [COAL, COAL, [GOLD_INGOT, IRON_INGOT]]
+#   cheap_glass:
+#     type: smelting
+#     result: GLASS
+#     ingredient: "#minecraft:sand"
+#     experience: 0.1
+#     cooking-time: 100
+#   some_old_recipe:
+#     enabled: false                              # keeps the entry but skips it
+recipes: {}
